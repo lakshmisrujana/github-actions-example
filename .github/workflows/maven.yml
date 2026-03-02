@@ -23,7 +23,9 @@ jobs:
         distribution: 'adopt'
         cache: maven
     - name: Build with Maven
-      run: mvn clean install
+      run: |
+          mvn clean install
+          echo "built the maven"
 
     - name: Build & push Docker image
       uses: mr-smithers-excellent/docker-build-push@v5
